@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #2e8b57; 
+            --accent: #98fb98; 
+            --background: #FFFFFF; 
+            --gray-100: #F7F8F9;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-600: #4B5563;
+            --gray-800: #2e8b57;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--gray-800);
+            line-height: 1.5;
+        }
+
+        nav {
+            padding: 1rem 2rem;
+            background: var(--background);
+            border-bottom: 1px solid var(--gray-200);
+            height: 80px;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-right: 3rem;
+        
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 1.4rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-icons i {
+            cursor: pointer;
+            color: var(--gray-600);
+            transition: color 0.2s;
+        }
+
+        .nav-icons i:hover {
+            color: var(--primary);
+        }
+
+    .categories {
+            padding: 4rem 2rem;
+            background: var(--background);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.55rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .categories-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: var(--background);
+            padding: 1.5rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 4px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary);
+        }
+
+        .category-card h3 {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        
+        .features {
+            padding: 4rem 2rem;
+            background: var(--gray-100);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-card i {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        
+        .best-sellers {
+            padding: 4rem 2rem;
+            background: var(--background);
+        }
+
+        
+        .products-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            
+        }
+
+
+        .product-card {
+            border: 1px solid var(--gray-200);
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .product-card:hover {
+            border-color: var(--primary);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .price {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        footer {
+            background: var(--primary);
+            padding: 2rem;
+            color: white;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-column {
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-column a {
+            color: #E5E7EB;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #4B5563;
+        }
+
+        .footer-bottom p {
+            font-size: 0.875rem;
+            color: #E5E7EB;
+        }
+    
+        .subscribe-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .subscribe-input {
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .subscribe-btn {
+            padding: 0.75rem;
+            background: var(--primary);
+            color: #D1D5DB;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .subscribe-btn:hover {
+            background: var(--accent);
+        }
+
+</style>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">PawPals</div>
+            <div class="nav-links">
+                <a href="LandingPage.html">Home</a>
+                <a href="Shop.html">Shop</a>
+                <a href="#">Collections</a>
+                <a href="Best-Sellers.html">Bestsellers</a>
+            </div>
+            <div class="nav-icons">
+                <i class="fas fa-search" onclick="showSearchPopup()"></i>
+                <i class="fas fa-shopping-cart" onclick="showCartPopup()"></i>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section class="categories">
+        <h2 class="section-title">Shop by Category</h2>
+
+    
+        <div class="section-subtitle">
+            <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 2rem; color: var(--primary);">For Dogs</h3>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="images copy\dogtoys.png" height="150px" width="150px"  alt="Dog Toys">
+                <h3>Dog Toys</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\dogfood.png" height="150px" width="150px" alt="Dog Food">
+                <h3>Dog Food</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\dogaccesories.png" height="150px" width="150px" alt="Dog Accessories">
+                <h3>Dog Accessories</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\dogmedicine (1).png" height="150px" width="150px" alt="Dog Medicare">
+                <h3>Dog Medicare</h3>
+            </div>
+        </div>
+
+        
+        <div class="section-subtitle">
+            <h3 style="text-align: center; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 2rem; color: var(--primary);">For Cats</h3>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="images copy\cattoys (2).png" height="150px" width="150px"  alt="Cat Toys">
+                <h3>Cat Toys</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\catfood.png" height="150px" width="150px"  alt="Cat Food">
+                <h3>Cat Food</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\cataccesories (1).png" height="150px" width="150px" alt="Cat Accessories">
+                <h3>Cat Accessories</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\image.png" height="150px" width="150px" alt="Cat Medicare">
+                <h3>Cat Medicare</h3>
+            </div>
+        </div>
+
+        <div class="section-subtitle">
+            <h3 style="text-align: center; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 2rem; color: var(--primary);">For Fishes</h3>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="images copy\aquarium.jpg" height="150px" width="150px"  alt="Cat Toys">
+                <h3>Aquariums</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\product-3.jpg" height="150px" width="150px"  alt="Cat Food">
+                <h3>Fish Food</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\fishaccesories.jpg" height="150px" width="150px" alt="Cat Accessories">
+                <h3>Fish Accessories</h3>
+            </div>
+            <div class="category-card">
+                <img src="images copy\fishmeds.jpg" height="150px" width="150px" alt="Cat Medicare">
+                <h3>Fish Medicare</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About PawPals</h3>
+                <p>Your trusted pet care partner, providing the best products for your furry friends.</p>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="LandingPage.html">Home</a>
+                <a href="Shop.html">Shop</a>
+                <a href="#">Collections</a>
+            </div>
+    
+    
+            <div class="footer-column">
+                <h3>Subscribe to our Newsletter</h3>
+                <form class="subscribe-form">
+                <input type="email" class="subscribe-input" onsubmit="showSubscribePopup(event)" placeholder="Enter your email" required>
+                 <button type="submit" class="subscribe-btn">Subscribe</button>
+             </form>
+            </div>
+
+    
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <a href="#"><i class="fas fa-envelope"></i> Email Us</a>
+                <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 PawPals. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function showSearchPopup() {
+            alert('Search functionality is currently under development.');
+        }
+
+        function showCartPopup() {
+            alert('Your shopping cart is empty. Start adding some items!');
+        }
+
+        function showShopNowPopup() {
+            alert('Welcome to PawPals, Shop with us!');
+        }
+
+        function showSubscribePopup() {
+           alert('Thank you for subscribing to our newsletter!');
+        }
+    </script>
+    
+</body>
+</html>
